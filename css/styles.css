@@ -39,14 +39,20 @@ body {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
-
-/* =========== /Common styles =========== */
-/* =========== Phone Header styles =========== */
-
 .container {
     max-width: 320px;
     padding: 0 16px;
     margin: 0 auto;}
+
+@media only screen and (min-width: 768px){
+        .container{
+            max-width: 768px;}   } 
+
+@media only screen and (min-width:1158px){
+                .container{ max-width: 1158px;
+                    padding: 0 15px;}}
+/* =========== /Common styles =========== */
+/* =========== Phone Header styles =========== */
 
 .page-header {color: #ffffff;
     border-bottom: 1px solid #E7E9FC;
@@ -76,14 +82,15 @@ body {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #4d5ae5;
-    padding: 17px 0;   
-    
+    padding: 16px 0;   
+    display: block;
    }
 .logo-part{
     color: #2e2f42;
 }
   
-.menu-open-btn {
+.menu-open-btn {width: 24px;
+    height: 24px;
     line-height: 0;
     padding: 0;
     background-color: transparent;
@@ -91,26 +98,24 @@ body {
     stroke: #ffffff;
     }
 .address {
-    font-style: normal;
-    margin-left: auto;
     display: none;
 }
 /* =========== Tablet Header styles =========== */
 @media only screen and (min-width: 768px){
-    .container{
-        max-width: 768px;}
-
+  
     .menu{ display: flex; align-items: center;
     gap: 40px;}
 
-    .logo {margin-right: 120px;}
+    .logo {margin-right: 120px;
+        padding: 16px 0;
+    }
    .menu-link {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #2e2f42;
-    
+    padding: 24px 0;
     display: block;   
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
@@ -159,8 +164,6 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .menu-open-btn{display: none}}
 /* =========== Desktop Header styles =========== */
 @media only screen and (min-width:1158px){
-.container{ max-width: 1158px;
-    padding: 0 15px;}
 
 .logo{
     margin-right: 76px;
@@ -169,6 +172,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     gap: 40px;
     flex-direction: row;}
+
 .address-link{
     font-size: 16px;
     line-height: 1.5;
@@ -178,7 +182,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 /* =========== /Page Header styles =========== */
 /* =========== Phone hero Section styles =========== */
   
-.hero {
+.hero {max-width: 320px;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office.jpg");
     background-size: cover;
     background-color: #2e2f42;
@@ -233,14 +237,14 @@ background-color: #404BBF;
 /* =========== Tablet hero Section styles =========== */
 
 @media only screen and (min-width: 768px){
-    .hero {
+    .hero {max-width: 768px;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office-tablet.jpg");
     padding: 112px 0; }
     .main-title {
         max-width: 496px;
-        margin-bottom: 36px;
         font-size: 56px;
-        line-height: 1.07;
+        line-height: 1.1;
+        margin-bottom: 36px;
         }}
 
 @media only screen and (min-resolution: 192dpi) and (min-width: 768px){
@@ -250,7 +254,8 @@ background-color: #404BBF;
 }
 /* =========== Desktop hero Section styles =========== */
 @media only screen and (min-width: 1158px){
-    .hero {padding: 188px 0;
+    .hero {max-width: 1440px;
+        padding: 188px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office-desktop.jpg")
     }
 .main-title{font-size: 56px;
@@ -272,12 +277,12 @@ background-color: #404BBF;
     color: #2e2f42;
 }
 .feature-list{ display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 72px;
+        gap: 72px;
     flex-wrap: wrap;
    }
-
+.feature-item{
+    width: 100%;
+}
 .feature-list-title{color: #2e2f42;
         font-weight: 700;
         font-size: 36px;
@@ -304,24 +309,18 @@ letter-spacing: 0.02em;}
 @media only screen and (min-width: 768px){
     
     .feature-container{max-width: 768px;
-        padding: 96px 0;
-    }
+           }
     .feature-list{display: grid;
         grid-template-columns: repeat(2, 356px);
-        gap: 24px;}
+        gap: 72px 24px;}
 
-    .feature-list-item{
-        width: 100%;
-    }
-
-    .feature-list-title {text-align: left;}
+       .feature-list-title {text-align: left;}
 }
 /* =========== Desktop Feature Section styles =========== */
 @media only screen  and (min-width: 1158px){
 
     .feature-container{max-width: 1158px;
-        padding: 120px 0;
-    }
+            }
     .feature {
         font-weight: 500;
         font-size: 20px;
@@ -366,82 +365,77 @@ letter-spacing: 0.02em;}
 /*=========== /Feature Section styles =========== */
 
 /* =========== Phone Our Team Section styles =========== */
+
 .team-section {
-padding-bottom: 24px;
-    padding-top: 96px;
+padding: 0 0;
     background: #f4f4fd;}
 
-    .team-item {
-        margin-bottom: 72px;
-        background-color: #FFFFFF;
-        border-radius: 0px 0px 4px 4px;
-        box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-            0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-            0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-    }
-    
-.media-nav{  display: flex;
-    gap: 24px;
-    align-items: center;
-    justify-content: center;
-    padding-top: 8px;
-    padding-bottom: auto;
-}
-.media-link{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #4d5ae5;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.media-link:hover,
-.media-link:focus {
-    background-color: #404bbf;}
-
-.name-profession {padding: 32px 0;
-}
-.team-title{ font-weight: 700;
+  
+    .team-title{color: #2e2f42;
+    font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     text-align: center;
-    color: #2e2f42;
     margin-bottom: 72px;
-}
-.team-list-title{
+    
+    }
+    .team-list {display: flex;
+    gap: 24px;
+    flex-direction: column;
+    
+    }
+    .team-item {width: 264px;
+        background-color: #FFFFFF;
+        border-radius: 0px 0px 4px 4px;
+        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    }
+    .name-profession{
+        padding: 32px 0;
+    }
+    .media-nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+    }
+    .media-item{
+        width: 40px;
+        height: 40px;
+    }
+    .media-link{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #4d5ae5;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .media-link:hover,
+    .media-link:focus {
+        background-color: #404bbf;}
+    .media-icon{
+          fill:#f4f4fd;
+    }
+    .team-list-title{color: #2e2f42;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     text-align: center;
-    color: #2e2f42;
     margin-bottom: 8px;
-}
-.team-list-text {
+    }
+    .team-list-text{font-weight: 500;
+        margin-bottom: 8px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
-    color: #434455;
-}
-.media-icon{fill: #f4f4fd;}
-
-.box-for-person {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.media-nav{
-    display: flex;
-    justify-content: center;
     
 }
-
-
 
 /* =========== Tablet Our Team Section styles =========== */
 
@@ -449,6 +443,7 @@ padding-bottom: 24px;
     
     .team-list {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         gap: 24px;
         column-gap: 64px;
@@ -460,7 +455,7 @@ padding-bottom: 24px;
 /* =========== Desktop Our Team Section styles =========== */
 
 @media only screen  and (min-width: 1158px){
-
+    
 .team-list {display: flex;
     flex-direction: row;
 gap: 24px;
@@ -508,6 +503,9 @@ padding-right: auto;
     border: 1px solid #e7e9fc;
     border-top: none;
 }
+.portfolio-item {
+    width: 100%;
+}
 
 .portfolio-list-title{
     font-weight: 500;
@@ -524,29 +522,23 @@ padding-right: auto;
     .portfolio-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 72px 24px;
         
     }
-
-    .box-for-card {
-        width: 356px;
-        height: 420px;
+    .portfolio-item {
+        width: calc((100% - 48px) / 2);
     }
 }
 /* =========== Desktop Our Portfolio Section styles =========== */
 @media screen and (min-width: 1158px) {
-    .portfolio {
-        padding: 120px 0;
-    }
-    .portfolio-list {flex-wrap: nowrap;
-            row-gap: 48px;
-        }
-
+   
         .box-image {
             position: relative;
             overflow: hidden;
         }
-    
+        .portfolio-item {
+            width: calc((100% - 48px) / 3);
+        }
         .overlay-text{
             position: absolute;
             top:0;
@@ -584,7 +576,10 @@ padding-right: auto;
     padding: 96px 0 96px;
     background: #2e2f42;
 }
-.page-footer-container {margin-bottom: 16px;
+.container-footer {display:flex;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+    justify-content: center;
 }
 .logo-part-footer {
     color: #f4f4fd;
@@ -689,14 +684,20 @@ padding-right: auto;
     margin-left: 16px;
     
 }
+@media screen and (max-width: 767px) {
+
+.contacts-text, .page-footer-text, .logo-footer{display:block;
+    text-align: center;
+}}
 /* =========== Tablet footer window styles =========== */
 @media screen and (min-width: 768px) {
 
-    .footer-container {
-        width: 584px;
+    .container-footer {
+        max-width: 584px;
         display: flex;
-        flex-wrap: wrap;
-    }
+        justify-content: flex-start;
+        align-items: baseline;
+           }
 
     .page-footer-container {
         display: block;
@@ -705,7 +706,7 @@ padding-right: auto;
 
     .contacts {
         display: inline-block;
-        margin-left: 24px;
+        
     }
 
     .contacts-text {
@@ -729,26 +730,24 @@ padding-right: auto;
 
 /* =========== Desktop footer window styles =========== */
 @media screen and (min-width: 1158px) {
-
-    .container-footer {display: flex;
-        width: 1158px;
+.page-footer{color: #f4f4fd;
+        padding: 100px 0;
+        background-color: #2E2F42;
+        }
+.container-footer {
+    margin:0;
+    display: flex;
+        max-width: 1158px;
         align-items: baseline;
-    }
-
-    .form-subscribe{
-        display: flex;
         flex-wrap: nowrap;
-        gap: 24px;
+        justify-content: space-between;
     }
 
-    .logo-footer {display:inline-block;
-        margin-right: 120px;
+    .form-subscribe-form{
+        display: flex;
+        flex-direction: row;
     }
 
-    .contacts {
-        margin-right: 80px;
-        margin-left: 0px;
-    }
     .form-subscribe-input {
         opacity: 1;
     }
@@ -773,7 +772,7 @@ padding-right: auto;
     visibility: visible;
 }
 .modal-window{ padding: 72px 24px 24px 24px;
-    width: 288px;
+    height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -969,27 +968,33 @@ background-color: #2E2F42;}
         left: 0;
         z-index: 9999999;
         opacity: 0;
+        pointer-events: none;
         visibility: hidden;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
     }
     .mobile-menu.is-open {
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
     }
-    .mobile-menu-container{width: 320px;
+    .mobile-menu-container{padding: 72px 16px 16px;
+        display:flex; flex-direction: column;
+        justify-content: space-between;
         background: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        height: 100%;
+    }
+    .mobile-nav{margin-bottom: auto;
+    }
+    .media-nav1{
+        display: flex;
+        gap: 40px;
 
     }
-    .mobile-nav-menu{margin: 72px 16px auto;
-    }
-    
-    .mobile-menu-btn{position: absolute;
+    .modal-close-btn{position: absolute;
+        fill: #2e2f42;
         top: 24px;
-        right: 24px;
+        right: 16px;
         width: 24px;
         height: 24px;
         border-radius: 50%;
@@ -997,25 +1002,31 @@ background-color: #2E2F42;}
         justify-content: center;
         align-items: center;
         border: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 0;
+        padding: 8;
         cursor: pointer;
         background-color: #fff;
-    }
+        stroke:#2E2F42 ;}
     
    
 .mobile-item {
     font-weight: 700;
     font-size: 36px;
-    line-height: 1.11111;
+    line-height: 1.11;
     letter-spacing: 0.02em;
     color: #2e2f42;
-    padding-bottom: 40px;
+    
 }
+.mobile-item:not(:last-child){
+    margin-bottom: 40px;
+}
+.mobile-item:hover,
+.mobile-item:focus {
+    color: #404bbf;}
+
 .page-contact-phone {
     font-style: normal;
-    margin: 128px 16px auto;
+    
 }
-
 .address-link-phone {
     font-weight: 500;
     font-size: 20px;
@@ -1040,7 +1051,7 @@ background-color: #2E2F42;}
 }
 /* =========== Tablet and desktop burger menu styles =========== */
 @media screen and (min-width: 768px) {
-    .backdrop {
+    .mobile-menu{
         display: none;
     }
 }
