@@ -182,7 +182,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 /* =========== /Page Header styles =========== */
 /* =========== Phone hero Section styles =========== */
   
-.hero {max-width: 320px;
+.hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office.jpg");
     background-size: cover;
     background-color: #2e2f42;
@@ -237,7 +237,7 @@ background-color: #404BBF;
 /* =========== Tablet hero Section styles =========== */
 
 @media only screen and (min-width: 768px){
-    .hero {max-width: 768px;
+    .hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office-tablet.jpg");
     padding: 112px 0; }
     .main-title {
@@ -255,13 +255,13 @@ background-color: #404BBF;
 /* =========== Desktop hero Section styles =========== */
 @media only screen and (min-width: 1158px){
     .hero {max-width: 1440px;
-        padding: 188px 0;
+        padding: 120px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office-desktop.jpg")
     }
 .main-title{font-size: 56px;
     line-height: 1.07;}}
 @media only screen and (min-resolution: 192dpi) and (min-width:1158px){
-.hero{
+.hero{padding: 120px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people-office-desktop@2x.jpg")}
 .main-title{font-size: 56px;
         line-height: 1.07;
@@ -321,8 +321,8 @@ letter-spacing: 0.02em;}
 
     .feature-container{max-width: 1158px;
             }
-    .feature {
-        font-weight: 500;
+    .feature {padding: 120px 0;
+        font-weight: 400;
         font-size: 20px;
         line-height: 1.2;
         letter-spacing: 0.02em;
@@ -367,7 +367,8 @@ letter-spacing: 0.02em;}
 /* =========== Phone Our Team Section styles =========== */
 
 .team-section {
-padding: 0 0;
+    padding-top: 96px;
+    padding-bottom: 48px;
     background: #f4f4fd;}
 
   
@@ -382,9 +383,9 @@ padding: 0 0;
     
     }
     .team-list {display: flex;
-    gap: 24px;
+    gap: 72px;
     flex-direction: column;
-    
+    align-items: center;
     }
     .team-item {width: 264px;
         background-color: #FFFFFF;
@@ -393,6 +394,7 @@ padding: 0 0;
     }
     .name-profession{
         padding: 32px 0;
+        
     }
     .media-nav{
         display: flex;
@@ -455,16 +457,20 @@ padding: 0 0;
 /* =========== Desktop Our Team Section styles =========== */
 
 @media only screen  and (min-width: 1158px){
-    
+    .team-section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        background: #f4f4fd;}
 .team-list {display: flex;
     flex-direction: row;
 gap: 24px;
 padding-right: auto; 
 }
+
 }
 /* =========== /Our Team Section styles =========== */
 /* =========== Phone Our Portfolio Section styles =========== */
-.portfolio {
+.portfolio-section {
     padding-top: 96px;
     padding-bottom: 48px;
 }
@@ -498,12 +504,12 @@ padding-right: auto;
         text-align: center;
         color: #2e2f42;
     }
-.name-category{
+.name-category{margin-bottom: 48px;
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
 }
-.portfolio-item {
+.portfolio-item {margin-bottom: 0;
     width: 100%;
 }
 
@@ -525,13 +531,17 @@ padding-right: auto;
         gap: 72px 24px;
         
     }
+    .name-category{margin-bottom: 0;}
     .portfolio-item {
         width: calc((100% - 48px) / 2);
     }
 }
 /* =========== Desktop Our Portfolio Section styles =========== */
 @media screen and (min-width: 1158px) {
-   
+    .portfolio-section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
         .box-image {
             position: relative;
             overflow: hidden;
@@ -579,7 +589,7 @@ padding-right: auto;
 .container-footer {display:flex;
     flex-wrap: wrap;
     gap: 72px 24px;
-    justify-content: center;
+    
 }
 .logo-part-footer {
     color: #f4f4fd;
@@ -605,17 +615,14 @@ padding-right: auto;
     margin-top: 0;
     margin-bottom: 0;
 }
-.contacts{
-    margin-bottom: 72px;
 
-}
 .contacts-text{font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #fff;
     text-align: center;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 
 }
 .media-nav-footer{display: flex;
@@ -735,7 +742,7 @@ padding-right: auto;
         background-color: #2E2F42;
         }
 .container-footer {
-    margin:0;
+    
     display: flex;
         max-width: 1158px;
         align-items: baseline;
@@ -749,7 +756,7 @@ padding-right: auto;
     }
 
     .form-subscribe-input {
-        opacity: 1;
+        opacity: 1;margin-bottom: 0px;
     }
     
 }
